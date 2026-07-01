@@ -28,6 +28,8 @@ from openai import OpenAI
 client = OpenAI(base_url="https://api.ecohash.com/v1", api_key="eco_...")
 ```
 
+Coming from another provider? See [how EcoHash compares to OpenRouter and Together](comparison.md). Want a specific model? Jump to [model quickstarts](models).
+
 ## Prerequisites
 
 - An EcoHash API key, set as the `ECOHASH_API_KEY` environment variable.
