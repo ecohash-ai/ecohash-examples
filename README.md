@@ -16,6 +16,8 @@ A collection of runnable example apps built on EcoHash — an OpenAI-compatible 
   <img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT">
   <img src="https://img.shields.io/badge/OpenAI-compatible-6D28D9" alt="OpenAI-compatible">
   <img src="https://img.shields.io/badge/examples-10-lightgrey" alt="10 examples">
+  <a href="https://x.com/ecohashdev"><img src="https://img.shields.io/badge/X-@ecohashdev-000000?logo=x&logoColor=white" alt="X"></a>
+  <a href="https://huggingface.co/ecohash-ai"><img src="https://img.shields.io/badge/Hugging%20Face-ecohash--ai-FFD21E?logo=huggingface&logoColor=black" alt="Hugging Face"></a>
 </p>
 
 ## New to EcoHash?
@@ -28,7 +30,7 @@ from openai import OpenAI
 client = OpenAI(base_url="https://api.ecohash.com/v1", api_key="eco_...")
 ```
 
-Coming from another provider? See [how EcoHash compares to OpenRouter and Together](comparison.md). Want a specific model? Jump to [model quickstarts](models).
+Coming from another provider? See [how EcoHash compares](#comparison) below.
 
 ## Prerequisites
 
@@ -56,6 +58,22 @@ Coming from another provider? See [how EcoHash compares to OpenRouter and Togeth
 
 - **[vision](vision)** — ask questions about an image
 - **[image-generation](image-generation)** — generate images from a text prompt
+
+## Comparison
+
+All three expose an OpenAI-compatible API — moving between them is mostly a `base_url` + key change. Facts from each project's own docs/site (2026-06); corrections welcome via issue.
+
+| | EcoHash | OpenRouter | Together AI |
+|---|---|---|---|
+| What it is | Hosts open models + GPU cloud | Router to 300+ models across providers | Hosts open models + GPU cloud |
+| Hosts the models | Yes | No (routes to providers) | Yes |
+| One key covers | Chat, vision, speech-to-text, text-to-speech, embeddings, reranker, images | Primarily chat/LLMs (others vary) | Chat, vision, embeddings, images, audio/video |
+| Speech (STT + TTS) | STT **and** TTS | Varies by provider | STT (fast); TTS varies |
+| Fine-tuning | Yes | No (it is a router) | Yes |
+| Rent GPUs / clusters | Yes | No | Yes |
+| Pricing | Per-token / per-minute | Pass-through + 5.5% fee on credits | Per-token + GPU hourly |
+
+Sources: [EcoHash](https://docs.ecohash.com) · [OpenRouter](https://openrouter.ai) · [Together AI](https://www.together.ai).
 
 ## Getting help
 
