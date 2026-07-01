@@ -1,10 +1,20 @@
 # Function / tool calling
 
-Define a function and let the model decide when to call it. The model returns a
-structured tool call with arguments, which your code then executes.
+The full tool-use loop: the model requests a tool call, your code runs the tool, you
+feed the result back, and the model returns a final natural-language answer.
+
+**How it works:** send `tools` → model returns a `tool_call` → run the function →
+append a `tool` message with the result → model produces the final answer.
+
+## Run
 
 ```bash
 pip install openai
 export ECOHASH_API_KEY=eco_...   # create one at console.ecohash.com
 python tools.py
 ```
+
+**Expected output:** a one-sentence weather answer for Dallas, composed from the tool result (`21°C, sunny`).
+
+**Models:** `llama-3.1-8b-instruct`, `qwen2.5-7b-instruct`, `GLM-5.2`.
+**Docs:** [Chat completions](https://docs.ecohash.com/platform-models/chat-completions).

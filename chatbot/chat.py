@@ -1,4 +1,4 @@
-"""Minimal chat completion with EcoHash (OpenAI-compatible)."""
+"""Multi-turn chat with EcoHash (OpenAI-compatible). Type 'exit' to quit."""
 
 import os
 
@@ -9,9 +9,17 @@ client = OpenAI(
     api_key=os.environ["ECOHASH_API_KEY"],
 )
 
-response = client.chat.completions.create(
-    model="llama-3.1-8b-instruct",
-    messages=[{"role": "user", "content": "Say hello in one sentence."}],
-)
+messages = [{"role": "system", "content": "You are a concise, helpful assistant."}]
 
-print(response.choices[0].message.content)
+print("Chat with EcoHash — type 'exit' to quit.")
+while True:
+    user = input("you> ").strip()
+    if user.lower() in {"exit", "quit"}:
+        break
+    messages.append({"role": "user", "content": user})
+    reply = client.chat.completions.create(
+        model="llama-3.1-8b-instruct",
+        messages=messages,
+    ).choices[0].message.content
+    print("bot>", reply)
+    messages.append({"role": "assistant", "content": reply})
