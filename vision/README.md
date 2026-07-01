@@ -13,7 +13,7 @@ export ECOHASH_API_KEY=eco_...   # create one at console.ecohash.com
 python describe_image.py
 ```
 
-**Expected output:** a description of the sample image (a cat).
+**Expected output:** a description of the sample image (a dog).
 
 **Models:** `qwen3-vl-8b-instruct`, `gemma-4-31b-it`.
 **Docs:** [Chat completions](https://docs.ecohash.com/platform-models/chat-completions).

@@ -35,7 +35,7 @@ tools = [{
 
 messages = [{"role": "user", "content": "What's the weather in Dallas? Answer in one sentence."}]
 
-first = client.chat.completions.create(model="llama-3.1-8b-instruct", messages=messages, tools=tools)
+first = client.chat.completions.create(model="qwen2.5-7b-instruct", messages=messages, tools=tools)
 msg = first.choices[0].message
 
 if not msg.tool_calls:
@@ -54,5 +54,5 @@ else:
         result = get_weather(**json.loads(c.function.arguments))
         messages.append({"role": "tool", "tool_call_id": c.id, "content": json.dumps(result)})
 
-    final = client.chat.completions.create(model="llama-3.1-8b-instruct", messages=messages)
+    final = client.chat.completions.create(model="qwen2.5-7b-instruct", messages=messages)
     print(final.choices[0].message.content)

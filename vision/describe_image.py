@@ -9,7 +9,7 @@ client = OpenAI(
     api_key=os.environ["ECOHASH_API_KEY"],
 )
 
-image_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/640px-Cat03.jpg"
+image_url = "https://raw.githubusercontent.com/pytorch/hub/master/images/dog.jpg"
 
 response = client.chat.completions.create(
     model="qwen3-vl-8b-instruct",

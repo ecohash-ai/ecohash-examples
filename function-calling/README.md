@@ -16,5 +16,5 @@ python tools.py
 
 **Expected output:** a one-sentence weather answer for Dallas, composed from the tool result (`21°C, sunny`).
 
-**Models:** `llama-3.1-8b-instruct`, `qwen2.5-7b-instruct`, `GLM-5.2`.
+**Models:** `qwen2.5-7b-instruct`, `GLM-5.2` (models with tool calling enabled).
 **Docs:** [Chat completions](https://docs.ecohash.com/platform-models/chat-completions).

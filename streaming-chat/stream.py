@@ -18,6 +18,8 @@ stream = client.chat.completions.create(
 )
 
 for chunk in stream:
+    if not chunk.choices:          # final usage chunk carries no choices
+        continue
     delta = chunk.choices[0].delta.content
     if delta:
         print(delta, end="", flush=True)
