@@ -11,7 +11,7 @@
 
 # EcoHash Examples
 
-A collection of runnable example apps built on EcoHash — an OpenAI-compatible inference API for open models (chat, vision, speech, embeddings, images).
+A collection of runnable example apps built on EcoHash — an OpenAI-compatible inference API for open models (chat, speech, embeddings, images).
 
 ## New to EcoHash?
 
@@ -47,9 +47,8 @@ Coming from another provider? See [how EcoHash compares](#comparison) below.
 - **[embeddings](embeddings)** — turn text into vectors
 - **[reranker](reranker)** — reorder candidates by relevance
 
-## Vision & images
+## Images
 
-- **[vision](vision)** — ask questions about an image
 - **[image-generation](image-generation)** — generate images from a text prompt
 
 ## Comparison
@@ -60,7 +59,7 @@ All three expose an OpenAI-compatible API — moving between them is mostly a `b
 |---|---|---|---|
 | What it is | Hosts open models + GPU cloud | Router to 300+ models across providers | Hosts open models + GPU cloud |
 | Hosts the models | Yes | No (routes to providers) | Yes |
-| One key covers | Chat, vision, speech-to-text, text-to-speech, embeddings, reranker, images | Primarily chat/LLMs (others vary) | Chat, vision, embeddings, images, audio/video |
+| One key covers | Chat, speech-to-text, text-to-speech, embeddings, reranker, images | Primarily chat/LLMs (others vary) | Chat, vision, embeddings, images, audio/video |
 | Speech (STT + TTS) | STT **and** TTS | Varies by provider | STT (fast); TTS varies |
 | Fine-tuning | Yes | No (it is a router) | Yes |
 | Rent GPUs / clusters | Yes | No | Yes |
