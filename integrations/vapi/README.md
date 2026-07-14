@@ -35,6 +35,10 @@ Expose the port publicly (ngrok is fine for a first test).
 }
 ```
 
+Or set it in the dashboard under Assistant → Voice: pick **Custom voice** and paste your adapter's `/synthesize` URL.
+
+![Vapi assistant Voice settings: Custom voice provider with the adapter Server URL](vapi-voice-config.png)
+
 Vapi sends the secret back in the `x-vapi-secret` header on every request, and the adapter rejects anything that does not match.
 
 ## Test it without making a call
