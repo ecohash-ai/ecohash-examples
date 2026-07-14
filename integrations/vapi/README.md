@@ -18,7 +18,9 @@ export VAPI_SECRET=your-webhook-secret
 uvicorn server:app --host 0.0.0.0 --port 8000
 ```
 
-Expose the port publicly (ngrok is fine for a first test).
+Expose the port publicly (ngrok is fine for a first test). Create the key in the EcoHash console under API Keys:
+
+![EcoHash console API Keys page with the Create Key button](ecohash-api-key.png)
 
 ## Point the assistant at it
 
