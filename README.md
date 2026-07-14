@@ -33,23 +33,29 @@ Coming from another provider? See [how EcoHash compares](#comparison) below.
 ## Voice & speech
 
 - **[voice-agent](voice-agent)** — speech-to-text → LLM → text-to-speech, all on one API key
-- **[speech-to-text](speech-to-text)** — transcribe audio to text
-- **[text-to-speech](text-to-speech)** — synthesize speech from text
+- **[speech-to-text](quickstart/speech-to-text)** — transcribe audio to text
+- **[text-to-speech](quickstart/text-to-speech)** — synthesize speech from text
 
 ## Text
 
-- **[chatbot](chatbot)** — a minimal chat completion
-- **[streaming-chat](streaming-chat)** — stream the response as it generates
-- **[function-calling](function-calling)** — let the model call your tools
+- **[chatbot](quickstart/chatbot)** — a minimal chat completion
+- **[streaming-chat](quickstart/streaming-chat)** — stream the response as it generates
+- **[function-calling](quickstart/function-calling)** — let the model call your tools
 
 ## Retrieval
 
-- **[embeddings](embeddings)** — turn text into vectors
-- **[reranker](reranker)** — reorder candidates by relevance
+- **[embeddings](quickstart/embeddings)** — turn text into vectors
+- **[reranker](quickstart/reranker)** — reorder candidates by relevance
 
 ## Images
 
-- **[image-generation](image-generation)** — generate images from a text prompt
+- **[image-generation](quickstart/image-generation)** — generate images from a text prompt
+
+## Integrations
+
+- **[vapi](integrations/vapi)** — Kokoro TTS as the voice of a Vapi voice agent (custom-voice adapter)
+
+More platform integrations live in [integrations](integrations).
 
 ## Comparison
 
