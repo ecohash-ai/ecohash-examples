@@ -2,10 +2,7 @@
 
 Vapi lets you swap the voice of an agent for any TTS through its custom-voice provider: it POSTs the text to your server and plays back whatever PCM you return. This adapter puts Kokoro on EcoHash behind that slot, about $0.006 per minute of generated speech.
 
-```
-Vapi assistant ──voice-request──▶ server.py ──/v1/audio/speech──▶ EcoHash (kokoro-82m)
-               ◀──raw PCM 16-bit mono──┘
-```
+![Vapi custom-voice flow: Vapi assistant to adapter to EcoHash Kokoro and back](flow.png)
 
 1. Vapi POSTs `{"message": {"type": "voice-request", "text": ..., "sampleRate": ...}}` to your server.
 2. The adapter calls EcoHash `/v1/audio/speech` with `model: kokoro-82m` and `response_format: pcm`.
