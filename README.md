@@ -54,6 +54,7 @@ Coming from another provider? See [how EcoHash compares](#comparison) below.
 ## Integrations
 
 - **[vapi](integrations/vapi)** — Kokoro TTS as the voice of a Vapi voice agent (custom-voice adapter)
+- **[retell](integrations/retell)** — an open model as the brain of a Retell AI agent (custom LLM bridge)
 
 More platform integrations live in [integrations](integrations).
 

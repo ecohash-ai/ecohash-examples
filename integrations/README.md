@@ -5,5 +5,6 @@ Ready-to-use configurations and adapters for plugging EcoHash into agent platfor
 | Integration | What it does |
 | --- | --- |
 | [vapi](vapi) | Kokoro TTS as the voice of a Vapi voice agent (custom-voice adapter) |
+| [retell](retell) | An open model as the brain of a Retell AI agent (custom LLM bridge) |
 
-More coming: Retell AI, Dify, LiteLLM, Open WebUI, coding agents (Cursor / Cline / Aider), n8n, MacWhisper, and Bazarr/Subgen.
+More coming: Dify, LiteLLM, Open WebUI, coding agents (Cursor / Cline / Aider), n8n, MacWhisper, and Bazarr/Subgen.
