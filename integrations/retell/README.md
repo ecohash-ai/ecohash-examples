@@ -27,6 +27,8 @@ In the Retell dashboard, pick **Custom LLM** as the agent's response engine and 
 wss://your-host.example.com/llm-websocket
 ```
 
+![Retell Custom LLM agent with the bridge URL field](retell-custom-llm-url.png)
+
 Retell appends the call id and connects when a call starts. Voice, transcriber, and phone number stay as they were.
 
 ## Test it without making a call
