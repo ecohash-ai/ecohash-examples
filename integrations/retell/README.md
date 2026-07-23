@@ -2,8 +2,6 @@
 
 Retell's custom LLM slot opens a WebSocket to your server during a call, streams the live transcript, and speaks whatever text you stream back. This bridge answers with streaming completions from an open model on EcoHash, so the agent's brain costs tokens instead of Retell's per-minute LLM fee.
 
-![Retell custom LLM flow: Retell agent to bridge to EcoHash and back](flow.png)
-
 1. Your server sends a config event and a first sentence to speak.
 2. When the caller finishes a turn, Retell sends `response_required` with the live transcript and a `response_id`.
 3. The bridge forwards the transcript to EcoHash `/v1/chat/completions` with `stream: true`.
