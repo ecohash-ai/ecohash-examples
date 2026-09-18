@@ -13,7 +13,7 @@ Vapi lets you swap the voice of an agent for any TTS through its custom-voice pr
 
 ```bash
 pip install fastapi uvicorn httpx numpy
-export ECOHASH_API_KEY=eco_...          # create one at console.ecohash.com
+export ECOHASH_API_KEY=eco_...          # create one at https://console.ecohash.com?utm_source=github&utm_medium=referral&utm_campaign=devrel&utm_content=examples-vapi
 export VAPI_SECRET=your-webhook-secret
 uvicorn server:app --host 0.0.0.0 --port 8000
 ```
@@ -61,4 +61,4 @@ We ran this loop at 8, 16, and 24 kHz and fed the resampled PCM back into `whisp
 
 - Return exactly the `sampleRate` Vapi asks for (8000, 16000, 22050, or 24000). Kokoro is 24 kHz native; the adapter resamples.
 - Live call transcription stays on Vapi's built-in transcribers: the custom transcriber slot expects a streaming WebSocket, and EcoHash's transcription endpoint is batch. Use `whisper-large-v3-turbo` for post-call transcription.
-- Cost comparison against ElevenLabs, the custom-LLM bonus, and the FAQ are in the tutorial: https://ecohash.com/blog/vapi-custom-tts-kokoro
+- Cost comparison against ElevenLabs, the custom-LLM bonus, and the FAQ are in the tutorial: https://ecohash.com/blog/vapi-custom-tts-kokoro?utm_source=github&utm_medium=referral&utm_campaign=devrel&utm_content=examples-vapi-blog

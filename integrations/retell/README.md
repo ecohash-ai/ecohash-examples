@@ -11,7 +11,7 @@ Retell's custom LLM slot opens a WebSocket to your server during a call, streams
 
 ```bash
 pip install fastapi uvicorn openai
-export ECOHASH_API_KEY=eco_...   # create one at console.ecohash.com
+export ECOHASH_API_KEY=eco_...   # create one at https://console.ecohash.com?utm_source=github&utm_medium=referral&utm_campaign=devrel&utm_content=examples-retell
 uvicorn server:app --host 0.0.0.0 --port 8000
 ```
 
@@ -61,5 +61,5 @@ We ran this loop while writing the integration: config handshake, first sentence
 
 - The custom LLM slot covers the brain only: Retell's STT and TTS stay on its built-in providers. For an open TTS slot, see the [Vapi integration](../vapi).
 - Keep replies short for voice; the system prompt in `server.py` already pushes for one-sentence answers.
-- Swap `ECOHASH_MODEL` for any chat model on EcoHash: https://ecohash.com/models
-- Cost math against Retell's per-minute LLM fees and the FAQ are in the tutorial: https://ecohash.com/blog/retell-custom-llm
+- Swap `ECOHASH_MODEL` for any chat model on EcoHash: https://ecohash.com/models?utm_source=github&utm_medium=referral&utm_campaign=devrel&utm_content=examples-retell-models
+- Cost math against Retell's per-minute LLM fees and the FAQ are in the tutorial: https://ecohash.com/blog/retell-custom-llm?utm_source=github&utm_medium=referral&utm_campaign=devrel&utm_content=examples-retell-blog

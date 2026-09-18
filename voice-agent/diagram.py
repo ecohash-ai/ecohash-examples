@@ -17,7 +17,7 @@ ax.set_ylim(0, 3)
 ax.axis("off")
 
 boxes = [
-    ("Speech-to-text\nwhisper-large-v3", 2.0),
+    ("Speech-to-text\nwhisper-large-v3-turbo", 2.0),
     ("LLM\nllama-3.1-8b-instruct", 5.0),
     ("Text-to-speech\nkokoro-82m", 8.0),
 ]

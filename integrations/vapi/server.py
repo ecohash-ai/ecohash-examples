@@ -12,13 +12,20 @@ Run:
 """
 
 import os
+import sys
 
 import httpx
 import numpy as np
 from fastapi import FastAPI, HTTPException, Request, Response
 
 ECOHASH_BASE = "https://api.ecohash.com/v1"
-ECOHASH_KEY = os.environ["ECOHASH_API_KEY"]
+ECOHASH_KEY = os.environ.get("ECOHASH_API_KEY")
+if not ECOHASH_KEY:
+    sys.exit("ECOHASH_API_KEY is not set. Create a key at https://console.ecohash.com"
+             "?utm_source=github&utm_medium=referral&utm_campaign=devrel"
+             "&utm_content=examples-vapi-missing-key, "
+
+             "then: export ECOHASH_API_KEY=eco_...")
 VAPI_SECRET = os.environ.get("VAPI_SECRET")  # if set, requests must carry it
 
 TTS_MODEL = "kokoro-82m"

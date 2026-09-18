@@ -6,12 +6,21 @@ and the model returns a final natural-language answer.
 
 import json
 import os
+import sys
 
 from openai import OpenAI
 
+api_key = os.environ.get("ECOHASH_API_KEY")
+if not api_key:
+    sys.exit("ECOHASH_API_KEY is not set. Create a key at https://console.ecohash.com"
+             "?utm_source=github&utm_medium=referral&utm_campaign=devrel"
+             "&utm_content=examples-function-calling-missing-key, "
+
+             "then: export ECOHASH_API_KEY=eco_...")
+
 client = OpenAI(
     base_url="https://api.ecohash.com/v1",
-    api_key=os.environ["ECOHASH_API_KEY"],
+    api_key=api_key,
 )
 
 
@@ -35,7 +44,7 @@ tools = [{
 
 messages = [{"role": "user", "content": "What's the weather in Dallas? Answer in one sentence."}]
 
-first = client.chat.completions.create(model="qwen2.5-7b-instruct", messages=messages, tools=tools)
+first = client.chat.completions.create(model="qwen3-coder-30b-a3b-instruct", messages=messages, tools=tools)
 msg = first.choices[0].message
 
 if not msg.tool_calls:
@@ -54,5 +63,5 @@ else:
         result = get_weather(**json.loads(c.function.arguments))
         messages.append({"role": "tool", "tool_call_id": c.id, "content": json.dumps(result)})
 
-    final = client.chat.completions.create(model="qwen2.5-7b-instruct", messages=messages)
+    final = client.chat.completions.create(model="qwen3-coder-30b-a3b-instruct", messages=messages)
     print(final.choices[0].message.content)

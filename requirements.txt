@@ -1,0 +1,18 @@
+# Dependencies for the quickstart examples and the voice agent.
+#
+# Last tested 2026-09-18 on:
+#   Python 3.12.13 with openai 3.15.0, requests 2.34.2
+#   Python 3.9.6   with openai 2.48.0, requests 2.32.5   (3.9 is the floor)
+#
+# Both major versions of the OpenAI SDK work unchanged, because every example
+# uses the chat, audio, embeddings and images surfaces that did not change
+# between 2.x and 3.x.
+
+openai>=2.48
+requests>=2.32
+
+# Optional, per example:
+#   voice-agent --mic        pip install sounddevice numpy
+#   integrations/vapi        pip install fastapi uvicorn numpy
+#   integrations/retell      pip install fastapi uvicorn websockets
+#   *_diagram.py             pip install matplotlib

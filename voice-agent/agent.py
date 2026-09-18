@@ -14,12 +14,20 @@ import wave
 
 from openai import OpenAI
 
+api_key = os.environ.get("ECOHASH_API_KEY")
+if not api_key:
+    sys.exit("ECOHASH_API_KEY is not set. Create a key at https://console.ecohash.com"
+             "?utm_source=github&utm_medium=referral&utm_campaign=devrel"
+             "&utm_content=examples-voice-agent-missing-key, "
+
+             "then: export ECOHASH_API_KEY=eco_...")
+
 client = OpenAI(
     base_url="https://api.ecohash.com/v1",
-    api_key=os.environ["ECOHASH_API_KEY"],
+    api_key=api_key,
 )
 
-STT_MODEL = "whisper-large-v3"
+STT_MODEL = "whisper-large-v3-turbo"
 LLM_MODEL = "llama-3.1-8b-instruct"
 TTS_MODEL = "kokoro-82m"
 VOICE = "af_heart"
@@ -58,7 +66,7 @@ def run_turn(wav_bytes, out_path):
 
 def record(seconds=5, sr=16000):
     import sounddevice as sd
-    print(f"Recording {seconds}s — speak now…")
+    print(f"Recording {seconds}s, speak now...")
     audio = sd.rec(int(seconds * sr), samplerate=sr, channels=1, dtype="int16")
     sd.wait()
     buf = io.BytesIO()

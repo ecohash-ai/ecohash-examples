@@ -5,16 +5,24 @@ import sys
 
 from openai import OpenAI
 
+api_key = os.environ.get("ECOHASH_API_KEY")
+if not api_key:
+    sys.exit("ECOHASH_API_KEY is not set. Create a key at https://console.ecohash.com"
+             "?utm_source=github&utm_medium=referral&utm_campaign=devrel"
+             "&utm_content=examples-speech-to-text-missing-key, "
+
+             "then: export ECOHASH_API_KEY=eco_...")
+
 client = OpenAI(
     base_url="https://api.ecohash.com/v1",
-    api_key=os.environ["ECOHASH_API_KEY"],
+    api_key=api_key,
 )
 
 audio_path = sys.argv[1] if len(sys.argv) > 1 else "audio.wav"
 
 with open(audio_path, "rb") as audio_file:
     result = client.audio.transcriptions.create(
-        model="whisper-large-v3",
+        model="whisper-large-v3-turbo",
         file=audio_file,
         # response_format: "json" (default) | "text" | "srt" | "vtt" | "verbose_json" (segment timestamps)
         # language="en",           # skip language auto-detect for a known language
